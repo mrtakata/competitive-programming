@@ -1,53 +1,60 @@
 #include <iostream>
-#include <cmath>
 #include <string>
 using namespace std;
+//define macros
+#define ll long long int
 
-int isPrime(int n){
-    int i = 2, limit = sqrt(n), answer = 1;
-    if(n < 2) {
-        answer = 0;
+bool isPrime(int n){
+    int i = 2, limit = n/2;
+    if( n == 1){
+      return false;
     }
-    else{
-        while(i <= limit){
-            if(n % i == 0){
-                answer = 0;
-            }
-            i++;
-        }
+    if(n == 2) {
+      return true;
     }
-    return answer;
-}
-
-int main(){
-  int primeDigits[4] = {2, 3, 5, 7}, number, i = 0;
-  string answer, number_string;
-  int isSuperPrime = 1;
-  cin >> number;
-
-
-  number_string = std::to_string(number);
-  if(!isPrime(number)){
-    answer = "Nada";
-  }
-  else{
-    //super primo
-    while( (i < number_string.size()) || isSuperPrime){
-      if( !isPrime( atoi(std::c_str(number_string[i]) ) ){
-        isSuperPrime = 0;
+    while(i <= limit){
+      if(n % i == 0){
+        return false;
       }
       i++;
     }
+    return true;
+}
 
-    if(isSuperPrime){
-      answer = "Super";
-    }else{
-      answer = "Primo";
+int main(int argc, char *argv[]){
+  
+  cin.tie(0);
+  ios_base::sync_with_stdio(0);
+
+  int n, val;
+  // n = atoi(argv[1]);
+
+  cin >> val;
+  // for(int i = 0; i < n; i++){
+  while(!cin.eof()){
+    if(!isPrime(val)){
+      cout << "Nada" << endl;
+      // continue;
     }
-
+    else{
+      string s = to_string(val);
+      bool isSuperPrime = true;
+      for(int j = 0; j < s.size(); j++){
+        if(s[j] == '0' || s[j] == '1' || s[j] == '4' || 
+           s[j] == '6' || s[j] == '8' || s[j] == '9'){
+          isSuperPrime = false;
+          break;
+        }
+      }
+      if(isSuperPrime){
+        cout << "Super" << endl;
+      }
+      else{
+        cout << "Primo" << endl;
+      }
+    }
+    cin >> val;
   }
-
-
-  cout << answer << endl;
+  
   return 0;
 }
