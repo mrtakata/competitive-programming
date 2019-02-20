@@ -1,37 +1,34 @@
 #include <bits/stdc++.h>
+using namespace std;
+// define macros
 #define ll long long int
 
-using namespace std;
+ll solve(ll mid, ll n, ll m){
+  mid--;
+  ll ans = 0;
+  for(ll i = 1; i <= n; i++){
+    ans += min((ll)m, (ll)mid/i);
+  }
+  return ans;
+}
 
 int main(){
 
   cin.tie(0);
   ios_base::sync_with_stdio(0);
 
-  int n, m, k;
-  long int klargest = 0, value;
+  ll n, m;
+  ll k;
   cin >> n >> m >> k;
-  // long int mat[n][m];
 
-  for(int i = n; i >= 1; i--){
-    for(int j = m; j >= 1; j--){
-      // mat[i-1][j-1] = i*j;
-      value = i*j;
-      if(value > klargest){
-        klargest = value;
-      }
-      k--;
-      if(k == 0){
-        break;
-      }
-    }
+  ll left = 1, right = (ll) (n * m + 1);
+
+  while(left < right){
+    ll mid = (left+right)/2;
+    if(solve(mid, n, m) < k) left = mid + 1;
+    else right = mid;
   }
-  // for(int i = 0; i < n; i++){
-  //   for(int j = 0; j < m; j++){
-  //     cout << mat[i][j] << " ";
-  //   }
-  //   cout << endl;
-  // }
-  cout << klargest << endl;
+  cout << left - 1 << endl;
+
   return 0;
 }
