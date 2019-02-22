@@ -14,4 +14,3 @@ Below is the list of all of the exercises that are not solved, but are here in t
 - 1111C
 - 1113C
 - 1114B
-- 1118F1
