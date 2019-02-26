@@ -3,21 +3,30 @@ using namespace std;
 // define macros
 #define ll long long int
 
-int n, k, A, B, array[123456];
+ll n, k, A, B, a[123456];
 
+ll destruction_power(int l, ll r){
+    ll q = upper_bound(a, a + k, r) - lower_bound(a, a + k, l);
+    if(q == 0) return A;
+    if(l == r) return B * q;
+    ll mid = l + (r-l)/2;
+    return min(destruction_power(l, mid) + destruction_power(mid+1LL, r), B * q * (r-l+1LL));
+
+}
 
 int main(){
 
     // variable declaration   
     // read input
     cin >> n >> k >> A >> B;
-    for(int i = 0; i < n; i++){
-        cin >> array[i];
-    }
-    sort(array, array + n);
-    // print answer
     ll end = (long long)1 << n;
-    cout << destruction_power(1,end) << endl;
-
+    for(ll i = 0; i < k; i++){
+        cin >> a[i];
+    }
+    sort(a, a + k);
+    // print answer
+    
+    cout << destruction_power(1LL, end) << endl;
+    // 
     return 0;
 }
