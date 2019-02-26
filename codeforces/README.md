@@ -1,6 +1,6 @@
 Here is a trick to check an exercise on CF:
 
-Go to http://codeforces.com/contest/_number-of-contest_/problem/_letter-of-problem_
+Go to [http://codeforces.com/contest/_number-of-contest_/problem/_letter-of-problem_]
 
 Example: [http://codeforces.com/contest/1118/problem/F1](http://codeforces.com/contest/1118/problem/F1)
 
