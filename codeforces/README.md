@@ -7,9 +7,9 @@ Example: [http://codeforces.com/contest/1118/problem/F1](http://codeforces.com/c
 Below is the list of all of the exercises that are not solved, but are here in the repository (Updated as best as I can):
 - 1B
 - 103B
-- 437C
 - 962B
 - 1077D
-- 1093D
 - 1113C
 - 1114B
+- 1133B
+- 1138B
