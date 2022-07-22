@@ -1,8 +1,10 @@
+# Codeforces
+
 Here is a trick to check an exercise on CF:
 
-Go to [http://codeforces.com/contest/_number-of-contest_/problem/_letter-of-problem_]
+Go to https://codeforces.com/contest/_number-of-contest_/problem/_letter-of-problem_
 
-Example: [http://codeforces.com/contest/1118/problem/F1](http://codeforces.com/contest/1118/problem/F1)
+Example: https://codeforces.com/contest/1118/problem/F1
 
 Below is the list of all of the exercises that are not solved, but are here in the repository (Updated as best as I can):
 - 1B
@@ -13,3 +15,25 @@ Below is the list of all of the exercises that are not solved, but are here in t
 - 1114B
 - 1133B
 - 1138B
+
+## Template C++ 
+```
+#include <bits/stdc++.h>
+using namespace std;
+// define macros
+#define ll long long int
+
+int main(){
+
+    // variable declaration
+    ll n;
+    ll ans;
+    
+    // read input
+    cin >> n;
+
+    // print answer
+    cout << ans;
+    return 0;
+}
+```
